@@ -19,7 +19,6 @@ public class GravityController : MonoBehaviour
 
     private void Start()
     {
-        // Start with gravity pointing down
         SetGravity(Vector2.down, 0f);
     }
 
@@ -44,7 +43,8 @@ public class GravityController : MonoBehaviour
     }
 
     private void SetGravity(Vector2 direction, float rotation)
-    {
+    {   
+        PlayAudio();
         Physics2D.gravity = direction * gravityStrength;
 
         gravityArrow.DOKill();
@@ -70,5 +70,10 @@ public class GravityController : MonoBehaviour
             gravityArrow.DOScale(originalScale, 0.08f)
                 .SetEase(Ease.InQuad)
         );
+    }
+
+    private void PlayAudio()
+    {
+        //AudioManager.Instance.PlayRandomizedPitchSFX(AudioManager.Instance.whooshSound);
     }
 }
