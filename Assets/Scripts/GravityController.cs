@@ -1,6 +1,5 @@
 using UnityEngine;
 using DG.Tweening;
-using UnityEngine.UI;
 
 public class GravityController : MonoBehaviour
 {
@@ -8,67 +7,45 @@ public class GravityController : MonoBehaviour
     [SerializeField] private RectTransform gravityArrow;
     [SerializeField] private float rotateDuration = 0.25f;
 
-    // 0 = Down, 1 = Left, 2 = Up, 3 = Right
-    private int gravityIndex = 0;
+    private float targetZ = 0f;
 
     private void Start()
     {
-        ApplyGravity();
+        SetGravity(Vector2.down, 0f);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            gravityIndex++;
-
-            if (gravityIndex > 3)
-                gravityIndex = 0;
-
-            ApplyGravity();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            gravityIndex--;
-
-            if (gravityIndex < 0)
-                gravityIndex = 3;
-
-            ApplyGravity();
-        }
+        ApplyGravity();
     }
 
     private void ApplyGravity()
     {
-        float targetZ = 0f;
-
-        switch (gravityIndex)
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            case 0: // Down
-                Physics2D.gravity = new Vector2(0f, -gravityStrength);
-                targetZ = -90f;
-                break;
-
-            case 1: // Left
-                Physics2D.gravity = new Vector2(-gravityStrength, 0f);
-                targetZ = 180f;
-                break;
-
-            case 2: // Up
-                Physics2D.gravity = new Vector2(0f, gravityStrength);
-                targetZ = 90f;
-                break;
-
-            case 3: // Right
-                Physics2D.gravity = new Vector2(gravityStrength, 0f);
-                targetZ = 0f;
-                break;
+            SetGravity(Vector2.up, 180f);
         }
+        else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            SetGravity(Vector2.left, 90f);
+        }
+        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            SetGravity(Vector2.down, 0f);
+        }
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            SetGravity(Vector2.right, 270f);
+        }
+    }
+
+    private void SetGravity(Vector2 direction, float rotation)
+    {
+        Physics2D.gravity = direction * gravityStrength;
 
         gravityArrow.DOKill();
         gravityArrow.DOLocalRotate(
-            new Vector3(0f, 0f, targetZ),
+            new Vector3(0f, 0f, rotation),
             rotateDuration,
             RotateMode.FastBeyond360
         ).SetEase(Ease.OutCubic);
