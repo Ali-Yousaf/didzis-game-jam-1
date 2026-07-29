@@ -376,6 +376,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -501,6 +502,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e0616c28ed25ed44a3186ffee0eb936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraEffects
+  cam: {fileID: 519420031}
+  freezeDuration: 0.09
+  shakeDuration: 0.15
+  shakeStrength: 0.18
+  shakeVibrato: 18
 --- !u!1 &529285812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,6 +1742,7 @@ MonoBehaviour:
   gravityStrength: 9.81
   gravityArrow: {fileID: 529285813}
   rotateDuration: 0.25
+  cameraEffects: {fileID: 0}
 --- !u!1 &1453431242
 GameObject:
   m_ObjectHideFlags: 0

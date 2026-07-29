@@ -10,11 +10,14 @@ public class GravityController : MonoBehaviour
     [SerializeField] private RectTransform gravityArrow;
     [SerializeField] private float rotateDuration = 0.2f;
 
+    [SerializeField] private CameraEffects cameraEffects;
+
     private Vector3 originalScale;
 
     private void Awake()
     {
         originalScale = gravityArrow.localScale;
+        cameraEffects = FindFirstObjectByType<CameraEffects>();
     }
 
     private void Start()
@@ -44,7 +47,9 @@ public class GravityController : MonoBehaviour
 
     private void SetGravity(Vector2 direction, float rotation)
     {   
-        PlayAudio();
+        //Camera Effects
+        cameraEffects.GravityImpact();
+
         Physics2D.gravity = direction * gravityStrength;
 
         gravityArrow.DOKill();

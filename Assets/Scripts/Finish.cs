@@ -6,7 +6,8 @@ public class Finish : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {   
-            LevelLoader.Instance.LoadNextLevel();            
+            if(LevelLoader.Instance != null)
+                LevelLoader.Instance.LoadNextLevel();            
         }
     }
 }

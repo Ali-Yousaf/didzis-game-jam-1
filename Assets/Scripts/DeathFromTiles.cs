@@ -11,7 +11,8 @@ public class DeathFromTiles : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            LevelLoader.Instance.RestartLevel();
+            if(LevelLoader.Instance != null)
+                LevelLoader.Instance.RestartLevel();
         }
     }   
 }
