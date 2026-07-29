@@ -12,18 +12,15 @@ public class LevelLoader : MonoBehaviour
     {
         Instance = this;
     }
-
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            LoadNextLevel();
-        }    
-    }
-
+    
     public void LoadNextLevel()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+
+    public void RestartLevel()
+    {
+        StartCoroutine(Restart());
     }
 
     private IEnumerator LoadLevel(int levelIndex)
@@ -33,5 +30,14 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(levelIndex);
+    }
+
+    private IEnumerator Restart()
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

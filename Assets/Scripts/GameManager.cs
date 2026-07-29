@@ -12,4 +12,12 @@ public class GameManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
+
+    public void RestartCurrentLevel()
+    {
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            LevelLoader.Instance.RestartLevel();
+        }
+    }
 }

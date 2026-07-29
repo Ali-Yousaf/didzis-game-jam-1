@@ -11,14 +11,7 @@ public class DeathFromTiles : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            ScreenFade.Instance.Fade(sceneTransitionTime);
-            StartCoroutine(LoadScene());
+            LevelLoader.Instance.RestartLevel();
         }
     }   
-
-    private IEnumerator LoadScene()
-    {
-        yield return new WaitForSeconds(sceneTransitionTime);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    } 
 }
