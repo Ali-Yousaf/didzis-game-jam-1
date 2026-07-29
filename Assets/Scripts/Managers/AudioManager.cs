@@ -12,10 +12,9 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Clips")]
 
     public AudioClip gameAudio;
-
     public AudioClip gravityChangeSFX;
-
     public AudioClip buttonCollectSFX;
+    public AudioClip starCollectSFX;
 
     private void Awake()
     {

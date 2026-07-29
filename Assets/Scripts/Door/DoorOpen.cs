@@ -12,5 +12,6 @@ public class Door : MonoBehaviour
     public void OpenDoor()
     {
         animator.SetTrigger("Open");
+        Destroy(gameObject, 1.5f);
     }
 }
