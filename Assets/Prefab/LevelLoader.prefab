@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5806885124678763120
 Transform:
   m_ObjectHideFlags: 0
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelLoader
   transition: {fileID: 9009289822882334458}
   transitionText: {fileID: 8022169922007549695}
-  transitionTime: 1
+  transitionTime: 1.5
   stars:
   - {fileID: 8532779914629821135}
   - {fileID: 429845899216726946}
