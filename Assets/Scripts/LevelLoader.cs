@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,8 @@ public class LevelLoader : MonoBehaviour
 {
     public static LevelLoader Instance;
     [SerializeField] private Animator transition;
+
+    [SerializeField] private TextMeshProUGUI transitionText;
     [SerializeField] private float transitionTime = 1f;
 
     void Awake()
@@ -26,6 +29,7 @@ public class LevelLoader : MonoBehaviour
     private IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("Start");
+        transitionText.text = "Level " + (levelIndex + 1);
 
         yield return new WaitForSeconds(transitionTime);
 
@@ -35,6 +39,7 @@ public class LevelLoader : MonoBehaviour
     private IEnumerator Restart()
     {
         transition.SetTrigger("Start");
+        transitionText.text = "Restarting...";
 
         yield return new WaitForSeconds(transitionTime);
 

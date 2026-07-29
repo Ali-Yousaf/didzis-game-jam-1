@@ -30,18 +30,23 @@ public class GravityController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             SetGravity(Vector2.up, 180f);
+            PlayAudio();
+
         }
         else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             SetGravity(Vector2.left, 270f);
+            PlayAudio();
         }
         else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             SetGravity(Vector2.down, 0f);
+            PlayAudio();
         }
         else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             SetGravity(Vector2.right, 90f);
+            PlayAudio();
         }
     }
 
@@ -51,7 +56,6 @@ public class GravityController : MonoBehaviour
         cameraEffects.GravityImpact();
 
         Physics2D.gravity = direction * gravityStrength;
-
         gravityArrow.DOKill();
 
         Sequence sequence = DOTween.Sequence();
