@@ -13,7 +13,9 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip gameAudio;
 
-    public AudioClip whooshSound;
+    public AudioClip gravityChangeSFX;
+
+    public AudioClip buttonCollectSFX;
 
     private void Awake()
     {
@@ -37,7 +39,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayRandomizedPitchSFX(AudioClip clip)
     {
-        SFXsource.pitch = Random.Range(0.9f, 1.1f);
+        SFXsource.pitch = Random.Range(0.8f, 1.2f);
         SFXsource.PlayOneShot(clip);
     }
 }

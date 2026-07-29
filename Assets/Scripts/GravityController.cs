@@ -83,6 +83,6 @@ public class GravityController : MonoBehaviour
 
     private void PlayAudio()
     {
-        //AudioManager.Instance.PlayRandomizedPitchSFX(AudioManager.Instance.whooshSound);
+        AudioManager.Instance.PlayRandomizedPitchSFX(AudioManager.Instance.gravityChangeSFX);
     }
 }
