@@ -24,4 +24,9 @@ public class MenuManager : MonoBehaviour
     {
         gameRulesPanel.SetActive(false);
     }
+
+    public void PlayEndless()
+    {
+        SceneManager.LoadScene("Endless");
+    }
 }

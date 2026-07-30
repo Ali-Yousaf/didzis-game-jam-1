@@ -9,6 +9,11 @@ public class CameraFollowX : MonoBehaviour
     private float fixedY;
     private float fixedZ;
 
+    void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     private void Start()
     {
         fixedY = transform.position.y;

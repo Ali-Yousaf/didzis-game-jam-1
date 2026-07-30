@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R))
         {
             LevelLoader.Instance.RestartLevel();
+        }
+
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            SceneManager.LoadScene("Menu");
         }
     }
 }

@@ -25,8 +25,6 @@ public class CameraEffects : MonoBehaviour
 
         if (cam == null)
             cam = Camera.main;
-
-        defaultPos = cam.transform.localPosition;
     }
 
     public void GravityImpact()
@@ -35,7 +33,7 @@ public class CameraEffects : MonoBehaviour
 
         cam.transform.DOKill();
 
-        cam.transform.localPosition = defaultPos;
+        Vector3 currentPos = cam.transform.localPosition;
 
         cam.transform.DOShakePosition(
             shakeDuration,
@@ -46,7 +44,7 @@ public class CameraEffects : MonoBehaviour
             true
         ).OnComplete(() =>
         {
-            cam.transform.localPosition = defaultPos;
+            cam.transform.localPosition = currentPos;
         });
     }
 
