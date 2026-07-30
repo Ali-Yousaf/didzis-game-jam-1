@@ -3649,6 +3649,7 @@ MonoBehaviour:
   gravityChangeSFX: {fileID: 8300000, guid: 5bc0f5a5d434e2a499e3268397ada0c8, type: 3}
   buttonCollectSFX: {fileID: 8300000, guid: 8f22ecf3dfb07e348986ac775a48f368, type: 3}
   starCollectSFX: {fileID: 8300000, guid: 05816d31d3b36f740beaf3921d430a65, type: 3}
+  teleportSFX: {fileID: 0}
 --- !u!4 &1808979462
 Transform:
   m_ObjectHideFlags: 0
@@ -8000,7 +8001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1683327077577277893, guid: f1f1a429612cbd44f930e1719c6704c7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5806885124678763120, guid: f1f1a429612cbd44f930e1719c6704c7, type: 3}
       propertyPath: m_LocalPosition.x
