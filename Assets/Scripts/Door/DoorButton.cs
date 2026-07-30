@@ -25,6 +25,6 @@ public class DoorButton : MonoBehaviour
 
         AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonCollectSFX);
 
-        Destroy(gameObject, 1.5f);
+        Destroy(gameObject, 0.5f);
     }
 }
