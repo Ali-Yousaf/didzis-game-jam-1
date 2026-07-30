@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void RestartCurrentLevel()
+    void Update()
     {
         if(Input.GetKeyDown(KeyCode.R))
         {

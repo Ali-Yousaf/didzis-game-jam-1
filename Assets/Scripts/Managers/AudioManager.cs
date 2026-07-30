@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip gravityChangeSFX;
     public AudioClip buttonCollectSFX;
     public AudioClip starCollectSFX;
+    public AudioClip teleportSFX;
 
     private void Awake()
     {
