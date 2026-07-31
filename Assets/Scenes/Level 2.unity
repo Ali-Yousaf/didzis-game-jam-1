@@ -2614,7 +2614,7 @@ TilemapCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -7998,10 +7998,6 @@ PrefabInstance:
     - target: {fileID: 1683327077577277893, guid: f1f1a429612cbd44f930e1719c6704c7, type: 3}
       propertyPath: m_Name
       value: LevelLoader
-      objectReference: {fileID: 0}
-    - target: {fileID: 1683327077577277893, guid: f1f1a429612cbd44f930e1719c6704c7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5806885124678763120, guid: f1f1a429612cbd44f930e1719c6704c7, type: 3}
       propertyPath: m_LocalPosition.x
